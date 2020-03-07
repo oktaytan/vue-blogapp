@@ -28,7 +28,7 @@ const actions = {
           let categoryIndex = res.data.findIndex(
             item => item.name === category.name
           );
-          if (categoryIndex > 0) {
+          if (categoryIndex > -1) {
             reject({ message: "This category already exists." });
           } else {
             ax.post("/category/create.php", JSON.stringify(category))
@@ -46,7 +46,7 @@ const actions = {
           let categoryIndex = res.data.findIndex(
             item => item.id === category.id
           );
-          if (categoryIndex < 1) {
+          if (categoryIndex < 0) {
             reject({ message: "This category doesn't exists." });
           } else {
             ax.put("/category/update.php", JSON.stringify(category))

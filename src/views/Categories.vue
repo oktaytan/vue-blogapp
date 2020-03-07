@@ -78,7 +78,6 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 import CategoryForm from "../components/CategoryForm";
-import moment from "moment";
 
 export default {
   name: "Categories",
